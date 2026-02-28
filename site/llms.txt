@@ -13,27 +13,27 @@ EliGal (אליגל פ.ב בע"מ) מתמחה בתכנון, הקמה ותחזוק
 - ארביטראז' אנרגטי (מודל דו-שכבתי)
 
 ## דפים
-- דף הבית: https://www.eligal.com/
-- מחשבון סולארי: https://www.eligal.com/calculator.html
-- מאמרים: https://www.eligal.com/blog/
-- מדיניות פרטיות: https://www.eligal.com/privacy-policy.html
-- תנאי שימוש: https://www.eligal.com/terms-and-conditions.html
-- הצהרת נגישות: https://www.eligal.com/accessibility-statement.html
+- דף הבית: https://www.eligalpb.com/
+- מחשבון סולארי: https://www.eligalpb.com/calculator.html
+- מאמרים: https://www.eligalpb.com/blog/
+- מדיניות פרטיות: https://www.eligalpb.com/privacy-policy.html
+- תנאי שימוש: https://www.eligalpb.com/terms-and-conditions.html
+- הצהרת נגישות: https://www.eligalpb.com/accessibility-statement.html
 
 ## מאמרים (Blog)
-1. המדריך המלא לאגירת אנרגיה סולארית בישראל – https://www.eligal.com/blog/post.html?slug=solar-energy-storage-guide-israel
-2. ארביטראז' אנרגטי – מה זה ולמה זה משתלם – https://www.eligal.com/blog/post.html?slug=energy-arbitrage-explained
-3. מהו EPC סולארי ולמה חשוב לעבוד עם קבלן Turnkey? – https://www.eligal.com/blog/post.html?slug=epc-solar-turnkey-israel
-4. Net Metering בישראל – המדריך לקיזוז חשמל סולארי – https://www.eligal.com/blog/post.html?slug=net-metering-israel-guide
-5. מקרה בוחן: בית שמעיה – מהפכה אנרגטית במבנה ציבורי – https://www.eligal.com/blog/post.html?slug=beit-shemaya-case-study
-6. סוללות LFP לאגירת אנרגיה – למה זו הבחירה הנכונה לישראל? – https://www.eligal.com/blog/post.html?slug=lfp-batteries-solar-israel
-7. איך לחשב ROI על מערכת סולארית ואגירה – מדריך מעשי – https://www.eligal.com/blog/post.html?slug=solar-roi-calculation-guide
-8. מערכת סולארית עסקית מול ביתית – מה ההבדלים? – https://www.eligal.com/blog/post.html?slug=commercial-vs-residential-solar
-9. תעריפי חשמל TOU בישראל – איך לנצל את הפער לטובתכם – https://www.eligal.com/blog/post.html?slug=tou-tariff-electricity-israel
-10. עצמאות אנרגטית לעסקים – מחזון למציאות – https://www.eligal.com/blog/post.html?slug=energy-independence-business
-11. גילוח שיא (Peak Shaving) – איך לחסוך אלפי שקלים על דמי ביקוש – https://www.eligal.com/blog/post.html?slug=peak-shaving-demand-charge
-12. מערכת BMS – המוח מאחורי סוללות האגירה – https://www.eligal.com/blog/post.html?slug=bms-battery-management-system
-13. תחזוקת מערכת סולארית – מה באמת צריך לעשות? – https://www.eligal.com/blog/post.html?slug=solar-system-maintenance-guide
+1. המדריך המלא לאגירת אנרגיה סולארית בישראל – https://www.eligalpb.com/blog/post.html?slug=solar-energy-storage-guide-israel
+2. ארביטראז' אנרגטי – מה זה ולמה זה משתלם – https://www.eligalpb.com/blog/post.html?slug=energy-arbitrage-explained
+3. מהו EPC סולארי ולמה חשוב לעבוד עם קבלן Turnkey? – https://www.eligalpb.com/blog/post.html?slug=epc-solar-turnkey-israel
+4. Net Metering בישראל – המדריך לקיזוז חשמל סולארי – https://www.eligalpb.com/blog/post.html?slug=net-metering-israel-guide
+5. מקרה בוחן: בית שמעיה – מהפכה אנרגטית במבנה ציבורי – https://www.eligalpb.com/blog/post.html?slug=beit-shemaya-case-study
+6. סוללות LFP לאגירת אנרגיה – למה זו הבחירה הנכונה לישראל? – https://www.eligalpb.com/blog/post.html?slug=lfp-batteries-solar-israel
+7. איך לחשב ROI על מערכת סולארית ואגירה – מדריך מעשי – https://www.eligalpb.com/blog/post.html?slug=solar-roi-calculation-guide
+8. מערכת סולארית עסקית מול ביתית – מה ההבדלים? – https://www.eligalpb.com/blog/post.html?slug=commercial-vs-residential-solar
+9. תעריפי חשמל TOU בישראל – איך לנצל את הפער לטובתכם – https://www.eligalpb.com/blog/post.html?slug=tou-tariff-electricity-israel
+10. עצמאות אנרגטית לעסקים – מחזון למציאות – https://www.eligalpb.com/blog/post.html?slug=energy-independence-business
+11. גילוח שיא (Peak Shaving) – איך לחסוך אלפי שקלים על דמי ביקוש – https://www.eligalpb.com/blog/post.html?slug=peak-shaving-demand-charge
+12. מערכת BMS – המוח מאחורי סוללות האגירה – https://www.eligalpb.com/blog/post.html?slug=bms-battery-management-system
+13. תחזוקת מערכת סולארית – מה באמת צריך לעשות? – https://www.eligalpb.com/blog/post.html?slug=solar-system-maintenance-guide
 
 ## יצירת קשר
 - טלפון: 054-8582640
