@@ -1,8 +1,8 @@
 # robots.txt – EliGal
-# https://www.eligal.co.il
+# https://www.eligal.com
 
 User-agent: *
 Allow: /
 
-Sitemap: https://www.eligal.co.il/sitemap.xml
-Host: https://www.eligal.co.il
+Sitemap: https://www.eligal.com/sitemap.xml
+Host: https://www.eligal.com
