@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>טוען... – מאמרים EliGal</title>
+    <meta name="description" content="">
+    <meta name="author" content="EliGal">
+    <link rel="icon" href="../assets/LOGO ELIGAL TRANSPARENT - Copy.webp" type="image/png">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="EliGal">
+    <!-- Structured Data (injected by JS) -->
+    <script id="postSchema" type="application/ld+json">{}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+        body {
+            background: #fff;
+        }
+
+        main {
+            /* Use global padding */
+        }
+
+        section {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Action Stack -->
+    <div id="float-placeholder"></div>
+
+    <!-- Reading progress bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div style="max-width:980px;margin:0 auto;padding:0 28px">
+            <div class="post-header" id="postHeader"></div>
+        </div>
+        <div class="post-divider" id="postDivider" style="display:none"></div>
+        <div style="max-width:980px;margin:0 auto;padding:0 28px">
+            <article class="post-content" id="postContent" style="display:none"></article>
+        </div>
+        <!-- CTA Banner -->
+        <div style="max-width:980px;margin:0 auto;padding:0 28px">
+            <div class="post-cta" id="postCta" style="display:none">
+                <h3>מעוניינים בייעוץ אנרגטי?</h3>
+                <p>צרו קשר עם אליגל לתכנון מותאם אישית של מערכת סולארית ואגירת אנרגיה.</p>
+                <a href="../index.html#contact" class="cta-btn">לתיאום פגישה ←</a>
+            </div>
+        </div>
+        <!-- Related Posts -->
+        <div style="max-width:980px;margin:0 auto;padding:0 28px">
+            <div class="related-posts" id="relatedPosts" style="display:none">
+                <h3>עוד מאמרינו</h3>
+                <div class="related-grid" id="relatedGrid"></div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="posts.js"></script>
+    <script>
+        (function () {
+            const slug = new URLSearchParams(window.location.search).get('slug');
+            const headerEl = document.getElementById('postHeader');
+            const contentEl = document.getElementById('postContent');
+            const dividerEl = document.getElementById('postDivider');
+            const ctaEl = document.getElementById('postCta');
+            const relatedEl = document.getElementById('relatedPosts');
+            const relatedGrid = document.getElementById('relatedGrid');
+            const posts = typeof BLOG_POSTS !== 'undefined' ? BLOG_POSTS : [];
+
+            if (!slug) {
+                headerEl.innerHTML = '<div class="blog-error"><p>לא צוין מאמר. <a href="index.html" style="color:var(--blog-gold)">חזרה למאמרים</a></p></div>';
+                return;
+            }
+            if (!posts.length) {
+                headerEl.innerHTML = '<div class="blog-error"><p>לא ניתן לטעון מאמרים. <a href="index.html" style="color:var(--blog-gold)">חזרה למאמרים</a></p></div>';
+                return;
+            }
+
+            const post = posts.find(p => p.slug === slug);
+            if (!post) {
+                headerEl.innerHTML = '<div class="blog-error"><p>המאמר לא נמצא. <a href="index.html" style="color:var(--blog-gold)">חזרה למאמרים</a></p></div>';
+                return;
+            }
+
+            // Update page meta
+            document.title = post.title + ' – מאמרים EliGal';
+            document.querySelector('meta[name="description"]').content = post.description;
+            document.querySelector('meta[property="og:title"]').content = post.title;
+            document.querySelector('meta[property="og:description"]').content = post.description;
+
+            // JSON-LD structured data
+            document.getElementById('postSchema').textContent = JSON.stringify({
+                "@context": "https://schema.org",
+                "@type": "BlogPosting",
+                "headline": post.title,
+                "description": post.description,
+                "datePublished": post.date,
+                "inLanguage": "he-IL",
+                "author": { "@type": "Organization", "name": post.author },
+                "publisher": { "@type": "Organization", "name": "EliGal", "url": "https://www.eligal.co.il" },
+                "articleSection": post.tag
+            });
+
+            // Render header
+            headerEl.innerHTML =
+                '<a href="index.html" class="post-back">→ חזרה למאמרים</a>' +
+                '<span class="blog-tag" data-tag="' + post.tag + '">' + post.tag + '</span>' +
+                '<h1>' + post.title + '</h1>' +
+                '<div class="post-meta">' +
+                '<span>' + post.dateFormatted + '</span>' +
+                '<span style="color:var(--blog-border)">·</span>' +
+                '<span>' + post.readTime + '</span>' +
+                '<span style="color:var(--blog-border)">·</span>' +
+                '<span>' + post.author + '</span>' +
+                '</div>';
+
+            // Render content
+            contentEl.innerHTML = post.content;
+            contentEl.style.display = 'block';
+            dividerEl.style.display = 'block';
+            ctaEl.style.display = 'block';
+
+            // Related posts
+            var related = posts.filter(p => p.slug !== slug).slice(0, 2);
+            if (related.length > 0) {
+                relatedEl.style.display = 'block';
+                relatedGrid.innerHTML = related.map(r =>
+                    '<a href="post.html?slug=' + r.slug + '" class="related-card">' +
+                    '<span class="blog-tag" data-tag="' + r.tag + '">' + r.tag + '</span>' +
+                    '<h4>' + r.title + '</h4>' +
+                    '</a>'
+                ).join('');
+            }
+
+            // Reading progress
+            window.addEventListener('scroll', function () {
+                var bar = document.getElementById('readingProgress');
+                if (!bar) return;
+                var h = document.documentElement.scrollHeight - window.innerHeight;
+                if (h <= 0) return;
+                bar.style.width = Math.min((window.scrollY / h) * 100, 100) + '%';
+            }, { passive: true });
+        })();
+    </script>
+    <script src="https://shmp-nagishliv3.netlify.app/nagishli.js?v=2.3" charset="utf-8" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מאמרים – EliGal | אגירת אנרגיה סולארית</title>
+    <meta name="description"
+        content="מדריכים, ניתוחים ומקרי בוחן בתחום אנרגיה סולארית, אגירת אנרגיה ועצמאות אנרגטית בישראל.">
+    <meta name="author" content="EliGal">
+    <link rel="canonical" href="https://www.eligal.co.il/blog/">
+    <link rel="icon" href="../assets/LOGO ELIGAL TRANSPARENT - Copy.webp" type="image/png">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="מאמרים – EliGal">
+    <meta property="og:description"
+        content="מדריכים, ניתוחים ומקרי בוחן בתחום אנרגיה סולארית, אגירת אנרגיה ועצמאות אנרגטית.">
+    <meta property="og:url" content="https://www.eligal.co.il/blog/">
+    <meta property="og:site_name" content="EliGal">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="blog.css">
+    <style>
+        /* Override main styles for blog page */
+        body {
+            background: #fff;
+        }
+
+        main {
+            /* Use global padding */
+        }
+
+        section {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Floating Action Stack -->
+    <div id="float-placeholder"></div>
+
+    <!-- Reading progress bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="blog-hero">
+            <h1>ידע ותובנות</h1>
+            <p>מדריכים, ניתוחים ומקרי בוחן בתחום אנרגיה סולארית ואגירת אנרגיה</p>
+        </div>
+
+        <div style="max-width:980px;margin:0 auto;padding:0 28px">
+            <!-- Tag Filters -->
+            <div class="tag-filters" id="tagFilters">
+                <button class="tag-filter active" data-tag="all">הכל</button>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="blog-grid" id="blogGrid"></div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="../js/components.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="posts.js"></script>
+    <script>
+        (function () {
+            const grid = document.getElementById('blogGrid');
+            const filtersContainer = document.getElementById('tagFilters');
+            const posts = typeof BLOG_POSTS !== 'undefined' ? BLOG_POSTS : [];
+            let activeTag = 'all';
+
+            if (!posts.length) {
+                grid.innerHTML = '<div class="blog-error"><p>אין פוסטים עדיין.</p></div>';
+                return;
+            }
+
+            // Build tag filter buttons
+            const tags = [...new Set(posts.map(p => p.tag))];
+            tags.forEach(tag => {
+                const btn = document.createElement('button');
+                btn.className = 'tag-filter';
+                btn.dataset.tag = tag;
+                btn.textContent = tag;
+                filtersContainer.appendChild(btn);
+            });
+
+            // Tag filter click
+            filtersContainer.addEventListener('click', (e) => {
+                if (!e.target.classList.contains('tag-filter')) return;
+                activeTag = e.target.dataset.tag;
+                filtersContainer.querySelectorAll('.tag-filter').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                renderPosts();
+            });
+
+            function renderPosts() {
+                const filtered = activeTag === 'all' ? posts : posts.filter(p => p.tag === activeTag);
+                if (filtered.length === 0) {
+                    grid.innerHTML = '<div class="blog-empty">לא נמצאו פוסטים בקטגוריה זו.</div>';
+                    return;
+                }
+                grid.innerHTML = filtered.map(post => `
+          <a href="post.html?slug=${post.slug}" class="blog-card enter"
+             itemscope itemtype="https://schema.org/BlogPosting">
+            <div class="blog-card-meta">
+              <span class="blog-tag" data-tag="${post.tag}" itemprop="articleSection">${post.tag}</span>
+              <span class="blog-read-time">${post.readTime}</span>
+            </div>
+            <h3 itemprop="headline">${post.title}</h3>
+            <p itemprop="description">${post.description}</p>
+            <time class="blog-date" itemprop="datePublished" datetime="${post.date}">${post.dateFormatted}</time>
+          </a>
+        `).join('');
+
+                // Scroll reveal
+                requestAnimationFrame(() => {
+                    const io = new IntersectionObserver((entries) => {
+                        entries.forEach(e => {
+                            if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+                        });
+                    }, { threshold: 0.12 });
+                    grid.querySelectorAll('.enter').forEach(el => io.observe(el));
+                });
+            }
+
+            renderPosts();
+
+            // Reading progress
+            window.addEventListener('scroll', function () {
+                const bar = document.getElementById('readingProgress');
+                if (!bar) return;
+                const h = document.documentElement.scrollHeight - window.innerHeight;
+                if (h <= 0) return;
+                bar.style.width = Math.min((window.scrollY / h) * 100, 100) + '%';
+            }, { passive: true });
+        })();
+    </script>
+    <script src="https://shmp-nagishliv3.netlify.app/nagishli.js?v=2.3" charset="utf-8" defer></script>
+</body>
+
+</html>

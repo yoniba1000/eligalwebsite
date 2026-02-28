@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מחשבון פוטנציאל אנרגטי | EliGal</title>
+    <meta name="description"
+        content="חשב את הפוטנציאל של מערכת סולארית לביתך או לעסקך. סימולטור תשואה סולארית מבית אליגל.">
+    <link rel="canonical" href="https://www.eligal.co.il/calculator.html">
+    <link rel="icon" href="assets/LOGO ELIGAL TRANSPARENT - Copy.webp" type="image/png">
+    <meta property="og:title" content="מחשבון פוטנציאל אנרגטי | EliGal">
+    <meta property="og:description" content="חשב את הפוטנציאל של מערכת סולארית לביתך או לעסקך.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.eligal.co.il/calculator.html">
+    <meta property="og:image" content="assets/LOGO ELIGAL TRANSPARENT - Copy.webp">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Rubik:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "סימולטור תשואה סולארית – EliGal",
+    "url": "https://www.eligal.co.il/calculator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "description": "מחשבון פוטנציאל אנרגטי – חשב את התשואה הצפויה ממערכת סולארית על הגג שלך. גודל מערכת, עלות, הכנסה שנתית והחזר השקעה.",
+    "inLanguage": "he-IL",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "ILS"
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": "EliGal",
+      "url": "https://www.eligal.co.il"
+    }
+  }
+  </script>
+    <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "בית",
+        "item": "https://www.eligal.co.il/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "מחשבון סולארי",
+        "item": "https://www.eligal.co.il/calculator.html"
+      }
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+    <!-- Floating Action Stack -->
+    <div id="float-placeholder"></div>
+
+    <!-- Header -->
+    <div id="header-placeholder"></div>
+
+    <main>
+        <div class="calc-page container" style="padding-bottom: 80px;">
+            <div class="calculator-container">
+                <div class="calc-header">
+                    <h1 style="font-family: 'Rubik', sans-serif; font-weight: 800; font-size: 48px;">מחשבון פוטנציאל
+                        אנרגטי</h1>
+                    <p style="font-size: 20px; color: var(--muted); margin-top: 12px;">בדקו כמה הגג שלכם שווה באמת –
+                        הכניסו את הנתונים וקבלו תוצאה מיידית</p>
+                </div>
+
+                <div class="calc-grid">
+                    <!-- Controls -->
+                    <div class="calc-controls">
+                        <div class="calc-section">
+                            <h3>נתוני הגג</h3>
+                            <!-- Area Slider -->
+                            <div class="calc-field">
+                                <label>
+                                    <svg class="field-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="18"
+                                        height="18">
+                                        <circle cx="12" cy="12" r="4" />
+                                        <path d="M12 2v2" />
+                                        <path d="M12 20v2" />
+                                        <path d="m4.93 4.93 1.41 1.41" />
+                                        <path d="m17.66 17.66 1.41 1.41" />
+                                        <path d="M2 12h2" />
+                                        <path d="M20 12h2" />
+                                        <path d="m6.34 17.66-1.41 1.41" />
+                                        <path d="m19.07 4.93-1.41 1.41" />
+                                    </svg>
+                                    שטח גג פנוי
+                                    <span class="calc-badge" id="calc-area-value">120 מ"ר</span>
+                                </label>
+                                <input type="range" id="calc-area" class="calc-slider" min="30" max="2500" step="10"
+                                    value="120">
+                            </div>
+
+                            <!-- Roof Type -->
+                            <div class="calc-field">
+                                <label>סוג הגג</label>
+                                <div class="calc-toggle-group">
+                                    <button type="button" id="roof-tiled" class="calc-toggle active">גג רעפים</button>
+                                    <button type="button" id="roof-flat" class="calc-toggle">גג שטוח</button>
+                                </div>
+                            </div>
+
+                            <!-- Direction -->
+                            <div class="calc-field">
+                                <label for="roof-direction">כיוון הגג</label>
+                                <select id="roof-direction" class="calc-select">
+                                    <option value="1">דרום (תפוקה מקסימלית)</option>
+                                    <option value="0.88">מזרח / מערב (88% תפוקה)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div class="calc-results">
+                        <div class="calc-results-decor" aria-hidden="true"></div>
+                        <div class="calc-results-inner">
+                            <div class="calc-income-header">
+                                <div class="calc-income-label">צפי הכנסה שנתית</div>
+                                <div class="calc-income-value" id="result-income">₪0</div>
+                                <div class="calc-tax-note">פטור ממס הכנסה (עד 24,000₪)</div>
+                            </div>
+
+                            <div class="calc-stats">
+                                <div>
+                                    <div class="stat-label">גודל מערכת</div>
+                                    <div class="stat-value" id="result-size">0 <small>kWp</small></div>
+                                </div>
+                                <div>
+                                    <div class="stat-label">עלות משוערת</div>
+                                    <div class="stat-value" id="result-cost">₪0</div>
+                                </div>
+                            </div>
+
+                            <div class="calc-roi-box">
+                                <div class="roi-label">
+                                    <span>החזר השקעה צפוי</span>
+                                </div>
+                                <div class="roi-value" id="result-roi">0 שנים</div>
+                            </div>
+
+                            <a href="index.html#contact" class="calc-cta">קבל הצעה מדויקת ←</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/calculator.js"></script>
+    <script src="https://shmp-nagishliv3.netlify.app/nagishli.js?v=2.3" charset="utf-8" defer></script>
+</body>
+
+</html>
