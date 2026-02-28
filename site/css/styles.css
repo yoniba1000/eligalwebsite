@@ -2262,17 +2262,7 @@ section.accent.contact {
     padding: 16px !important;
   }
 
-  .whatsapp-bubble {
-    width: 56px;
-    height: 56px;
-    bottom: 16px;
-    right: 16px;
-  }
 
-  .whatsapp-bubble svg {
-    width: 28px;
-    height: 28px;
-  }
 
   section.accent::before {
     display: none;
@@ -2329,5 +2319,25 @@ section.accent.contact {
 
   .logos-section {
     padding: 32px 16px;
+  }
+
+  /* Floating Action Bubbles - Final Override for Mobile/Tablet */
+  .floating-stack {
+    top: auto !important;
+    bottom: 24px !important;
+    left: auto !important;
+    right: 24px !important;
+    transform: none !important;
+    gap: 12px;
+  }
+
+  .float-bubble {
+    width: 46px !important;
+    height: 46px !important;
+  }
+
+  .float-bubble svg {
+    width: 20px !important;
+    height: 20px !important;
   }
 }
