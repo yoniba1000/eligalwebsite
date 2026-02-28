@@ -17,12 +17,14 @@
     <meta property="og:url" content="https://www.eligalpb.com/">
     <meta property="og:image" content="assets/LOGO ELIGAL TRANSPARENT - Copy.webp">
 
-    <!-- Fonts -->
+    <!-- Fonts (async to reduce TBT) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap">
     <link
         href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Outfit:wght@400;500;600;700;800;900&family=Rubik:wght@400;500;600;700;800;900&display=swap"
-        rel="stylesheet">
+        rel="stylesheet" media="print" onload="this.media='all'">
 
     <link rel="stylesheet" href="css/styles.css">
 
@@ -119,13 +121,14 @@
 
         <!-- ======================== HERO ======================== -->
         <section id="home" class="hero" aria-label="בית">
-            <video class="video" autoplay muted loop playsinline preload="auto">
+            <video class="video" autoplay muted loop playsinline preload="auto" poster="assets/video_cover.webp">
                 <source src="assets/Hero.webm" type="video/webm">
             </video>
             <div class="overlay" aria-hidden="true"></div>
             <div class="content">
                 <div class="hero-brand-row">
-                    <img src="assets/logo-symbol-transparent.png" alt="EliGal logo" class="hero-logo">
+                    <img src="assets/logo-symbol-transparent.png" alt="EliGal logo" class="hero-logo"
+                        fetchpriority="high" width="300" height="200">
                     <div class="hero-title">ELIGAL</div>
                 </div>
                 <div class="hero-subtitle">לוכדים את האור, משחררים את התלות</div>
@@ -182,11 +185,15 @@
         <section class="logos-section" aria-label="השותפים שלנו לדרך">
             <div class="logo-slider">
                 <div class="logo-slider-track">
-                    <img src="assets/logos-strip.webp" alt="Partner logos" class="logo-strip-img">
-                    <img src="assets/logos-strip2.webp" alt="Partner logos" class="logo-strip-img">
+                    <img src="assets/logos-strip.webp" alt="Partner logos" class="logo-strip-img" width="1280"
+                        height="89" loading="lazy">
+                    <img src="assets/logos-strip2.webp" alt="Partner logos" class="logo-strip-img" width="1029"
+                        height="82" loading="lazy">
                     <!-- Duplicate for seamless loop -->
-                    <img src="assets/logos-strip.webp" alt="Partner logos" class="logo-strip-img">
-                    <img src="assets/logos-strip2.webp" alt="Partner logos" class="logo-strip-img">
+                    <img src="assets/logos-strip.webp" alt="Partner logos" class="logo-strip-img" width="1280"
+                        height="89" loading="lazy">
+                    <img src="assets/logos-strip2.webp" alt="Partner logos" class="logo-strip-img" width="1029"
+                        height="82" loading="lazy">
                 </div>
             </div>
         </section>
@@ -319,9 +326,12 @@
 
                 <!-- Project Images Row -->
                 <div class="project-gallery">
-                    <img src="assets/project-1.webp" alt="פרויקט בית שמעיה – תמונה 1" loading="lazy">
-                    <img src="assets/project-2.webp" alt="פרויקט בית שמעיה – תמונה 2" loading="lazy">
-                    <img src="assets/project-3.webp" alt="פרויקט בית שמעיה – תמונה 3" loading="lazy">
+                    <img src="assets/project-1.webp" alt="פרויקט בית שמעיה – תמונה 1" loading="lazy" width="1920"
+                        height="1080">
+                    <img src="assets/project-2.webp" alt="פרויקט בית שמעיה – תמונה 2" loading="lazy" width="1200"
+                        height="675">
+                    <img src="assets/project-3.webp" alt="פרויקט בית שמעיה – תמונה 3" loading="lazy" width="958"
+                        height="538">
                 </div>
 
                 <!-- Project Content -->

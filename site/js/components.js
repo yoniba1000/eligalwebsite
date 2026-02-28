@@ -38,12 +38,12 @@ const components = {
         <div class="footer-grid">
             <div class="footer-brand">
                 <img src="{{root}}assets/logo-symbol-transparent.png"
-                    alt="EliGal" class="logo-big">
+                    alt="EliGal" class="logo-big" width="300" height="200">
                 <h2 class="footer-brand-name">ELIGAL</h2>
                 <p>העידן החדש של עצמאות אנרגטית. לוכדים את האור, משחררים את התלות.</p>
             </div>
             <div class="footer-col">
-                <h4>ניווט</h4>
+                <p class="footer-heading">ניווט</p>
                 <ul>
                     <li><a href="{{root}}index.html">דף הבית</a></li>
                     <li><a href="{{root}}index.html#about">אודות החברה</a></li>
@@ -53,14 +53,14 @@ const components = {
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>מרכז הידע</h4>
+                <p class="footer-heading">מרכז הידע</p>
                 <ul>
                     <li><a href="{{root}}blog/index.html">מאמרים ותובנות</a></li>
                     <li><a href="{{root}}calculator.html">מחשבון היתכנות</a></li>
                 </ul>
             </div>
             <div class="footer-col">
-                <h4>צור קשר</h4>
+                <p class="footer-heading">צור קשר</p>
                 <ul>
                     <li><a href="tel:+972548582640">054-8582640</a></li>
                     <li><a href="mailto:eligal.pb@gmail.com">eligal.pb@gmail.com</a></li>
